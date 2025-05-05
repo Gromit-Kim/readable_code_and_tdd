@@ -36,4 +36,15 @@ public class Product {
                 .stock(increasedStock)
                 .build();
     }
+
+    @Override
+    public String toString() {
+        return String.format("%-10s %-10d %-10d %-10d",
+                name,
+                productId,
+                price,
+                stock
+        );
+    }
+
 }

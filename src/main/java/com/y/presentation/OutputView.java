@@ -5,7 +5,7 @@ import com.y.presentation.dto.TransactionResult;
 public class OutputView {
 
     public void showAllProducts(String products){
-        System.out.println("제품명 제품ID 가격(1개당) L V S P M");
+        System.out.println("제품명     제품ID     가격(1개당) 현재재고");
         System.out.println(products);
     }
 

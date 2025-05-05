@@ -2,25 +2,25 @@ package com.y.domain;
 
 public class Cashier {
 
-    public Receipt buy(Product product, int quantity, Wallet wallet) {
+    public Receipt buy(Product product, int quantity, POSMoney POSMoney) {
         int totalPrice = product.getPrice() * quantity;
-        wallet = wallet.minusMoney(totalPrice);
+        POSMoney = POSMoney.minusMoney(totalPrice);
         product = product.increaseStock(quantity);
         return Receipt.builder()
                 .product(product)
-                .wallet(wallet)
+                .POSMoney(POSMoney)
                 .transactionQuantity(quantity)
                 .build();
 
     }
 
-    public Receipt sell(Product product, int quantity, Wallet wallet) {
+    public Receipt sell(Product product, int quantity, POSMoney POSMoney) {
         int totalPrice = product.getPrice() * quantity;
         product = product.decreaseStock(quantity);
-        wallet = wallet.addMoney(totalPrice);
+        POSMoney = POSMoney.addMoney(totalPrice);
         return Receipt.builder()
                 .product(product)
-                .wallet(wallet)
+                .POSMoney(POSMoney)
                 .transactionQuantity(quantity)
                 .build();
     }

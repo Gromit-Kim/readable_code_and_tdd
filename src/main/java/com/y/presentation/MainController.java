@@ -2,7 +2,7 @@ package com.y.presentation;
 
 import com.y.business.OrderService;
 import com.y.business.ProductService;
-import com.y.business.WalletService;
+import com.y.business.POSMoneyService;
 import com.y.presentation.dto.Number;
 import com.y.presentation.dto.Order;
 import com.y.presentation.dto.TransactionResult;
@@ -16,7 +16,7 @@ public class MainController {
 
     private final OrderService orderService;
     private final ProductService productService;
-    private final WalletService walletService;
+    private final POSMoneyService POSMoneyService;
 
     public void run() {
         while (true) {
@@ -70,7 +70,7 @@ public class MainController {
 
 
     private void showWallet() {
-        int walletMoney = this.walletService.getCurrentWallet();
+        int walletMoney = this.POSMoneyService.getCurrentWallet();
         this.outputView.showWallet(walletMoney);
     }
 

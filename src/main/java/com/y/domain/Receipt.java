@@ -10,7 +10,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class Receipt {
     private final Product product;
-    private final Wallet wallet;
+    private final POSMoney POSMoney;
     private final int transactionQuantity;
 
     public int totalAmount(){
@@ -23,7 +23,7 @@ public class Receipt {
                 product.getProductId(),
                 this.transactionQuantity,
                 totalAmount(),
-                wallet.getMoney()
+                POSMoney.getMoney()
         );
     }
 
